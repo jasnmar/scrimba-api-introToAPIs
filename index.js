@@ -1,23 +1,30 @@
-
+let postsArray = []
 
 fetch("https://apis.scrimba.com/jsonplaceholder/posts", {method: "GET"})
     .then(response => response.json())
     .then(data => {
         data.splice(5)
-        const myDiv = document.createElement('div')
-        myDiv.id="post-data"
-        document.querySelector("main").appendChild(myDiv)
-        let htmlToCreate = ""
-        data.forEach(post => {
-            htmlToCreate += `
-            <h2>${post.title}</h2>
-            <p>${post.body}</p>
-            <hr />
-            `
-        });
-        myDiv.innerHTML = htmlToCreate
+        postsArray = data
+        console.log(postsArray)
+        renderPosts()
+
     })
 
+function renderPosts() {
+    console.log("rendering posts")
+    const postDiv = document.getElementById("post-data")
+    let htmlToCreate = ""
+    console.log(postsArray)
+    postsArray.forEach(post => {
+        console.log(post)
+        htmlToCreate += `
+        <h2>${post.title}</h2>
+        <p>${post.body}</p>
+        <hr />
+        `
+    });
+    postDiv.innerHTML = htmlToCreate
+}
 
 const postForm = document.getElementById("post-form")
 postForm.addEventListener('submit', submitNewPost)
@@ -46,18 +53,14 @@ function submitNewPost(e) {
         body: JSON.stringify(pData)
     })
         .then(res => res.json())
-        .then(data => {
-
-            const postData = document.getElementById("post-data")
-            const html = `
-            <h2>${data.title}</h2>
-            <p>${data.body}</p>
-            <hr />
-            `
-            const oldData = postData.innerHTML
-            const newData = html+oldData
-            postData.innerHTML = newData
-            
+        .then(post => {
+            const newPost = {
+                title: post.title,
+                body: post.body
+            }
+            postsArray.unshift(newPost)
+            renderPosts()
+            document.getElementById("post-form").reset()
             
         })
 }
