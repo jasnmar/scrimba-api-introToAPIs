@@ -16,7 +16,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts", {method: "GET"})
         console.log(data)
         const myDiv = document.createElement('div')
         myDiv.id="post-data"
-        document.body.appendChild(myDiv)
+        document.querySelector("main").appendChild(myDiv)
         let htmlToCreate = ""
         data.forEach(post => {
             htmlToCreate += `

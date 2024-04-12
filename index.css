@@ -19,6 +19,9 @@ nav {
     padding: 4px;
 }
 
+main {
+    padding: 40px 20px;
+}
 #post-data {
     padding: 30px 20px;
 }
