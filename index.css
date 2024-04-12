@@ -19,9 +19,43 @@ nav {
     padding: 4px;
 }
 
-main {
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
     padding: 40px 20px;
+    gap: 10px;
+    
 }
+
+input, textarea {
+    font-family: inherit;
+}
+
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    padding: 6px;
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+
+}
+
+button:hover, button:focus {
+    border: 1px solid blue;
+}
+
 #post-data {
     padding: 30px 20px;
 }
+/* 
+Challenge: our form is hideous! Make it less hideous :P
+
+* Lay out the elements in a nicer way, maybe vertically. 
+  (CSS Grid or Flexbox should make this easy)
+* Add some background color to separate it from the posts
+* Style the button however you'd like.
+*/
