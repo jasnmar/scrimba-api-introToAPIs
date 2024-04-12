@@ -51,11 +51,3 @@ button:hover, button:focus {
 #post-data {
     padding: 30px 20px;
 }
-/* 
-Challenge: our form is hideous! Make it less hideous :P
-
-* Lay out the elements in a nicer way, maybe vertically. 
-  (CSS Grid or Flexbox should make this easy)
-* Add some background color to separate it from the posts
-* Style the button however you'd like.
-*/
