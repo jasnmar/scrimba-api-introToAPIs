@@ -1,18 +1,26 @@
+
+
 /**
 Challenge: 
 
-- Start building out the BoredBot Skeleton however you'd like. 
-    That will include:
-    - A title for the app ("BoredBot" might be a good start 😉)
-    - A placeholder element that will be populated with the random 
-      idea we get from the API
-    - A button to click for triggering the GET request to the Bored API. 
-      (Don't worry about implementing the button quite yet)
+When the button is clicked, call out to the Bored API
+(URL: https://apis.scrimba.com/bored/api/activity)
+and replace the h4 with the activity from the API
+
 */
 
+const findBtn = document.getElementById("get-idea")
 
-
-
+findBtn.addEventListener('click', function(e) {
+    e.preventDefault()
+    fetch('https://apis.scrimba.com/bored/api/activity')
+        .then(response => response.json())
+        .then(data => {
+            const activityEl = document.getElementById("activity-name")
+            activityEl.textContent = data.activity
+        })
+        }
+)
 
 
 
