@@ -46,5 +46,18 @@ function submitNewPost(e) {
         body: JSON.stringify(pData)
     })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+
+            const postData = document.getElementById("post-data")
+            const html = `
+            <h2>${data.title}</h2>
+            <p>${data.body}</p>
+            <hr />
+            `
+            const oldData = postData.innerHTML
+            const newData = html+oldData
+            postData.innerHTML = newData
+            
+            
+        })
 }
