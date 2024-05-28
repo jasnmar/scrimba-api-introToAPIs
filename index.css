@@ -1,0 +1,53 @@
+body, html {
+    font-family: "Libre Franklin", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+}
+
+
+nav {
+    display: flex;
+    background-color: black;
+    min-height: 30px;
+    width: 100vw;
+    position: fixed;
+    top:0px;
+    color: whitesmoke;
+    align-items: center;
+    padding: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    padding: 40px 20px;
+    gap: 10px;
+    
+}
+
+input, textarea {
+    font-family: inherit;
+}
+
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    padding: 6px;
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+
+}
+
+button:hover, button:focus {
+    border: 1px solid blue;
+}
+
+#post-data {
+    padding: 30px 20px;
+}
